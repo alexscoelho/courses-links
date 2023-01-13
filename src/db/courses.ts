@@ -21,4 +21,9 @@ export const courses: Course[] = [
     link: "https://www.pg4e.com/",
     source: "Youtube",
   },
+  {
+    name: "Jest Javascript Testing",
+    link: "https://www.classcentral.com/course/tau-jest-testing-tutorial-43742",
+    source: "Classcentral",
+  },
 ];
