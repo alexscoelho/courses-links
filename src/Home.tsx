@@ -1,19 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CourseLink } from "./components/CourseLink";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { courses } from "./db/courses";
 import { Course } from "./models/Course";
 
+async function getcourses() {
+  const response = await fetch("/.netlify/functions/hello");
+  return await response.json();
+}
+
 function Home() {
-  async function getHello() {
-    const response = await fetch("/.netlify/functions/hello");
-    const helloMessage = await response.json();
-    alert(helloMessage);
-  }
+  const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    getHello();
+    getcourses().then((courses) => setCourses(courses));
   }, []);
 
   return (
