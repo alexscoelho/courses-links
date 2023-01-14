@@ -5,7 +5,7 @@ import { Header } from "./components/Header";
 import { Course } from "./models/Course";
 
 async function getcourses() {
-  const response = await fetch("/.netlify/functions/hello");
+  const response = await fetch("/.netlify/functions/getCourses");
   return await response.json();
 }
 
